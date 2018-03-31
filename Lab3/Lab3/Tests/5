@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfPerson xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Person xsi:type="DartVader">
+    <Name>Anakin Skywalker</Name>
+  </Person>
+  <Person xsi:type="Peasant">
+    <Name>Vasya</Name>
+  </Person>
+  <Person xsi:type="King">
+    <Name>Henry III</Name>
+  </Person>
+  <Person xsi:type="Peasant">
+    <Name>Vasya</Name>
+  </Person>
+  <Person xsi:type="Queen">
+    <Name>Elizabeth II</Name>
+  </Person>
+  <Person xsi:type="Servant">
+    <Name>Petya</Name>
+  </Person>
+  <Person xsi:type="Sheriff">
+    <Name>Dirty Harry</Name>
+  </Person>
+  <Person xsi:type="DartVader">
+    <Name>Anakin Skywalker</Name>
+  </Person>
+  <Person xsi:type="KyloRen">
+    <Name>Ben Solo</Name>
+  </Person>
+  <Person xsi:type="DartVader">
+    <Name>Anakin Skywalker</Name>
+  </Person>
+  <Person xsi:type="KyloRen">
+    <Name>Ben Solo 2</Name>
+  </Person>
+</ArrayOfPerson>
