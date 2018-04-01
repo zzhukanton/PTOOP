@@ -1,4 +1,4 @@
-﻿namespace Oop3.PL
+﻿namespace Client
 {
     public class ComboboxItem
     {

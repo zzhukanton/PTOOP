@@ -2,7 +2,7 @@
 using System.IO;
 using System.Xml.Serialization;
 
-namespace Oop3.Core
+namespace Helpers
 {
     public class XmlHelper
     {

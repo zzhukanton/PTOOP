@@ -7,8 +7,8 @@
     <ProjectGuid>{492BF93E-0737-4B21-9B2A-AC95B2BF3046}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Oop3.Contracts</RootNamespace>
-    <AssemblyName>Oop3.Contracts</AssemblyName>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,14 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Person.cs" />
-    <Compile Include="King.cs" />
-    <Compile Include="Kingdom.cs" />
+    <Compile Include="Vegetable.cs" />
+    <Compile Include="Potato.cs" />
+    <Compile Include="Salad.cs" />
     <Compile Include="Peasant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queen.cs" />
-    <Compile Include="Servant.cs" />
-    <Compile Include="Sheriff.cs" />
+    <Compile Include="Pepper.cs" />
+    <Compile Include="Cucumber.cs" />
+    <Compile Include="Tomato.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

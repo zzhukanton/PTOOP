@@ -1,4 +1,4 @@
-﻿namespace Oop3.PL
+﻿namespace Client
 {
     partial class Form1
     {
@@ -59,7 +59,7 @@
             this.btnLoadKingdom.Name = "btnLoadKingdom";
             this.btnLoadKingdom.Size = new System.Drawing.Size(121, 23);
             this.btnLoadKingdom.TabIndex = 1;
-            this.btnLoadKingdom.Text = "Load kingdom";
+            this.btnLoadKingdom.Text = "Load salad";
             this.btnLoadKingdom.UseVisualStyleBackColor = true;
             this.btnLoadKingdom.Click += new System.EventHandler(this.btnLoadKingdom_Click);
             // 
@@ -69,7 +69,7 @@
             this.btnSaveKingdom.Name = "btnSaveKingdom";
             this.btnSaveKingdom.Size = new System.Drawing.Size(110, 23);
             this.btnSaveKingdom.TabIndex = 2;
-            this.btnSaveKingdom.Text = "Save kingdom";
+            this.btnSaveKingdom.Text = "Save salad";
             this.btnSaveKingdom.UseVisualStyleBackColor = true;
             this.btnSaveKingdom.Click += new System.EventHandler(this.btnSaveKingdom_Click);
             // 
@@ -87,7 +87,7 @@
             this.btnAddPerson.Name = "btnAddPerson";
             this.btnAddPerson.Size = new System.Drawing.Size(343, 23);
             this.btnAddPerson.TabIndex = 4;
-            this.btnAddPerson.Text = "Add person";
+            this.btnAddPerson.Text = "Add vegetable";
             this.btnAddPerson.UseVisualStyleBackColor = true;
             this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
             // 
@@ -97,7 +97,7 @@
             this.btnRemoveSelectedPerson.Name = "btnRemoveSelectedPerson";
             this.btnRemoveSelectedPerson.Size = new System.Drawing.Size(343, 23);
             this.btnRemoveSelectedPerson.TabIndex = 5;
-            this.btnRemoveSelectedPerson.Text = "Remove selected person";
+            this.btnRemoveSelectedPerson.Text = "Remove selected";
             this.btnRemoveSelectedPerson.UseVisualStyleBackColor = true;
             this.btnRemoveSelectedPerson.Click += new System.EventHandler(this.btnRemoveSelectedPerson_Click);
             // 
@@ -107,7 +107,7 @@
             this.btnNewKingdom.Name = "btnNewKingdom";
             this.btnNewKingdom.Size = new System.Drawing.Size(118, 23);
             this.btnNewKingdom.TabIndex = 6;
-            this.btnNewKingdom.Text = "New kingdom";
+            this.btnNewKingdom.Text = "New salad";
             this.btnNewKingdom.UseVisualStyleBackColor = true;
             this.btnNewKingdom.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -124,7 +124,7 @@
             this.btnEditPersonName.Name = "btnEditPersonName";
             this.btnEditPersonName.Size = new System.Drawing.Size(342, 23);
             this.btnEditPersonName.TabIndex = 8;
-            this.btnEditPersonName.Text = "Edit person\'s name";
+            this.btnEditPersonName.Text = "Edit title";
             this.btnEditPersonName.UseVisualStyleBackColor = true;
             this.btnEditPersonName.Click += new System.EventHandler(this.btnEditPersonName_Click);
             // 
@@ -134,9 +134,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(361, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 17);
+            this.label1.Size = new System.Drawing.Size(148, 17);
             this.label1.TabIndex = 9;
-            this.label1.Text = "The tridesyatoe kingdom";
+            this.label1.Text = "An original vegetables";
             // 
             // btnTiredTester
             // 
@@ -170,7 +170,7 @@
             this.Controls.Add(this.lbxPeople);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "The tridesyatoe kingdom";
+            this.Text = "Vegetables";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -33,7 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Iconsmind-Outline-King.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -84,17 +85,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Oop3.Contracts\Oop3.Contracts.csproj">
+    <ProjectReference Include="..\Models\Models.csproj">
       <Project>{492BF93E-0737-4B21-9B2A-AC95B2BF3046}</Project>
-      <Name>Oop3.Contracts</Name>
+      <Name>Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Oop3.Core\Oop3.Core.csproj">
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
       <Project>{426854e8-ae3c-4739-99fe-0e219593ec38}</Project>
-      <Name>Oop3.Core</Name>
+      <Name>Helpers</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Iconsmind-Outline-King.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

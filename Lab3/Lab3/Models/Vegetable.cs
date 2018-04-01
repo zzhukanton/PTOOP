@@ -1,17 +1,15 @@
-﻿namespace Oop3.Contracts
+﻿namespace Models
 {
-    public abstract class Person
+    public abstract class Vegetable
     {
         public string Name { get; set; }
         public string FullName => GetType().Name + " " + Name;
 
-        protected Person(string name)
+        protected Vegetable(string name)
         {
             Name = name;
         }
 
-        protected Person()
-        {
-        }
+        protected Vegetable() { }
     }
 }

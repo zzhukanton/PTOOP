@@ -1,23 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Oop3.Contracts;
-using Oop3.Core;
+using Models;
+using Helpers;
 
-namespace Oop3.PL
+namespace Client
 {
     public partial class Form1 : Form
     {
-        private Kingdom _currentKingdom;
-        private List<Type> _personTypes;
+        private Salad _currentSalad;
+        private List<Type> _vegetableTypes;
          
         public Form1()
         {
@@ -26,17 +21,17 @@ namespace Oop3.PL
 
         private void button5_Click(object sender, EventArgs e)
         {
-            InitializeNewKingdom();
+            InitializeNewSalad();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            InitializeNewKingdom();
+            InitializeNewSalad();
         }
 
-        private void InitializeNewKingdom(List<Person> deserializedKingdom = null)
+        private void InitializeNewSalad(List<Vegetable> deserializedKingdom = null)
         {
-            _currentKingdom = new Kingdom(deserializedKingdom);
+            _currentSalad = new Salad(deserializedKingdom);
             
             lbxPeople.Items.Clear();
             txbPersonName.Text = "";
@@ -46,10 +41,10 @@ namespace Oop3.PL
 
         private void InitializePersonTypes()
         {
-            _personTypes = LoadPersonTypes();
+            _vegetableTypes = LoadPersonTypes();
 
             ddlPersonType.Items.Clear();
-            foreach (var personType in _personTypes)
+            foreach (var personType in _vegetableTypes)
             {
                 ddlPersonType.Items.Add(new ComboboxItem {Text = personType.Name, Value = personType });
             }
@@ -63,7 +58,7 @@ namespace Oop3.PL
             {
                 foreach (Type t in a.GetTypes())
                 {
-                    if (t.IsSubclassOf(typeof (Person)))
+                    if (t.IsSubclassOf(typeof (Vegetable)))
                     {
                         personTypes.Add(t);
                     }
@@ -81,23 +76,23 @@ namespace Oop3.PL
                 return;
             }
 
-            var newPerson = Activator.CreateInstance((Type) selectedPersonType.Value) as Person;
+            var newPerson = Activator.CreateInstance((Type) selectedPersonType.Value) as Vegetable;
 
             if (newPerson == null)
             {
                  return;
             }
 
-            _currentKingdom.PeopleOfKingdom.Add(newPerson);
+            _currentSalad.Ingridients.Add(newPerson);
 
-            DrawCurrentKingdom();
+            DrawCurrentSalad();
         }
 
-        private void DrawCurrentKingdom()
+        private void DrawCurrentSalad()
         {
             lbxPeople.Items.Clear();
 
-            foreach (var person in _currentKingdom.PeopleOfKingdom)
+            foreach (var person in _currentSalad.Ingridients)
             {
                 lbxPeople.Items.Add(new ComboboxItem {Text = person.FullName, Value = person});
             }
@@ -121,7 +116,7 @@ namespace Oop3.PL
                 return;
             }
 
-            txbPersonName.Text = (currentPerson.Value as Person)?.Name;
+            txbPersonName.Text = (currentPerson.Value as Vegetable)?.Name;
         }
 
         private void btnEditPersonName_Click(object sender, EventArgs e)
@@ -140,33 +135,33 @@ namespace Oop3.PL
                 return;
             }
 
-            var person = currentPerson.Value as Person;
+            var person = currentPerson.Value as Vegetable;
             if (person != null)
             {
                 person.Name = currentPersonName;
             }
 
-            DrawCurrentKingdom();
+            DrawCurrentSalad();
         }
 
         private void btnRemoveSelectedPerson_Click(object sender, EventArgs e)
         {
-            var currentPerson = lbxPeople.SelectedItem as ComboboxItem;
+            var currentVegetable = lbxPeople.SelectedItem as ComboboxItem;
 
-            if (currentPerson == null)
+            if (currentVegetable == null)
             {
                 return;
             }
 
-            var person = currentPerson.Value as Person;
+            var person = currentVegetable.Value as Vegetable;
             if (person == null)
             {
                 return;
             }
 
-            _currentKingdom.PeopleOfKingdom.Remove(person);
+            _currentSalad.Ingridients.Remove(person);
 
-            DrawCurrentKingdom();
+            DrawCurrentSalad();
         }
 
         private void btnSaveKingdom_Click(object sender, EventArgs e)
@@ -177,7 +172,7 @@ namespace Oop3.PL
                 string filePath = saveFileDialog1.FileName;
                 try
                 {
-                    var serializedKingdom = XmlHelper.Serialize(_currentKingdom?.PeopleOfKingdom, _personTypes.ToArray());
+                    var serializedKingdom = XmlHelper.Serialize(_currentSalad?.Ingridients, _vegetableTypes.ToArray());
                     File.WriteAllText(filePath, serializedKingdom, Encoding.UTF8);
                 }
                 catch (IOException)
@@ -194,15 +189,15 @@ namespace Oop3.PL
                 string filePath = openFileDialog1.FileName;
                 try
                 {
-                    var deserializedKingdom = XmlHelper.DeserializeFromFile<List<Person>>(filePath, _personTypes.ToArray());
-                    InitializeNewKingdom(deserializedKingdom);
+                    var deserializedSalad = XmlHelper.DeserializeFromFile<List<Vegetable>>(filePath, _vegetableTypes.ToArray());
+                    InitializeNewSalad(deserializedSalad);
                 }
                 catch(Exception)
                 {
-                    InitializeNewKingdom();
+                    InitializeNewSalad();
                 }
 
-                DrawCurrentKingdom();
+                DrawCurrentSalad();
             }
         }
     }

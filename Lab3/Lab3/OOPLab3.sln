@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oop3.PL", "Oop3.PL\Oop3.PL.csproj", "{EC29E44A-CB18-4F77-A04B-3BCEFD1D62FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{EC29E44A-CB18-4F77-A04B-3BCEFD1D62FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oop3.Contracts", "Oop3.Contracts\Oop3.Contracts.csproj", "{492BF93E-0737-4B21-9B2A-AC95B2BF3046}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{492BF93E-0737-4B21-9B2A-AC95B2BF3046}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oop3.Core", "Oop3.Core\Oop3.Core.csproj", "{426854E8-AE3C-4739-99FE-0E219593EC38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{426854E8-AE3C-4739-99FE-0E219593EC38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E1DEFA6-E218-4A1A-8886-9B138EC15EB0}
 	EndGlobalSection
 EndGlobal
