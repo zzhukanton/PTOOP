@@ -43,11 +43,11 @@
     <Compile Include="Vegetable.cs" />
     <Compile Include="Potato.cs" />
     <Compile Include="Salad.cs" />
-    <Compile Include="Parrot.cs" />
+    <Compile Include="Cucumber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pepper.cs" />
-    <Compile Include="Cucumber.cs" />
     <Compile Include="Tomato.cs" />
+    <Compile Include="Parrot.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

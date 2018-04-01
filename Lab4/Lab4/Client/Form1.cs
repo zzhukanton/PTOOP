@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -19,6 +20,40 @@ namespace Client
             InitializeComponent();
         }
 
+        private List<Type> LoadPlugins()
+        {
+            var personTypes = new List<Type>();
+            string[] assemblies = Directory.GetFiles("Plugins", "*.dll");
+
+            foreach (String file in assemblies)
+            {
+                try
+                {
+                    if (File.Exists(file))
+                    {
+                        // load the assembly
+                        var asm = Assembly.LoadFrom(file);
+
+                        // get all types from the assembly that inherit ITask
+                        var query = from t in asm.GetTypes()
+                                    where t.IsSubclassOf(typeof(Vegetable))
+                                    select t;
+
+                        // add types to list of startup tasks
+                        foreach (Type type in query)
+                        {
+                            personTypes.Add(type);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+
+            return personTypes;
+        }
+        
         private void button5_Click(object sender, EventArgs e)
         {
             InitializeNewSalad();
@@ -48,6 +83,12 @@ namespace Client
             {
                 ddlPersonType.Items.Add(new ComboboxItem {Text = vegetableType.Name, Value = vegetableType });
             }
+
+            var pluginTypes = LoadPlugins();
+            foreach (var vegetableType in pluginTypes)
+            {
+                ddlPersonType.Items.Add(new ComboboxItem { Text = vegetableType.Name, Value = vegetableType });
+            }
         }
 
         private List<Type> LoadVegetableTypes()
@@ -69,14 +110,14 @@ namespace Client
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-            var selectedvegetableType = ddlPersonType.SelectedItem as ComboboxItem;
+            var selectedPersonType = ddlPersonType.SelectedItem as ComboboxItem;
 
-            if (selectedvegetableType == null)
+            if (selectedPersonType == null)
             {
                 return;
             }
 
-            var newVegetable = Activator.CreateInstance((Type)selectedvegetableType.Value) as Vegetable;
+            var newVegetable = Activator.CreateInstance((Type) selectedPersonType.Value) as Vegetable;
 
             if (newVegetable == null)
             {
@@ -109,36 +150,36 @@ namespace Client
 
         private void lbxPeople_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var currentVegetable = (sender as ListBox)?.SelectedItem as ComboboxItem;
+            var currentPerson = (sender as ListBox)?.SelectedItem as ComboboxItem;
 
-            if (currentVegetable == null)
+            if (currentPerson == null)
             {
                 return;
             }
 
-            txbPersonName.Text = (currentVegetable.Value as Vegetable)?.Name;
+            txbPersonName.Text = (currentPerson.Value as Vegetable)?.Name;
         }
 
         private void btnEditPersonName_Click(object sender, EventArgs e)
         {
-            var currentVegetable = lbxPeople.SelectedItem as ComboboxItem;
+            var currentPerson = lbxPeople.SelectedItem as ComboboxItem;
 
-            if (currentVegetable == null)
+            if (currentPerson == null)
             {
                 return;
             }
 
-            var currentVegetableName = txbPersonName.Text;
+            var currentPersonName = txbPersonName.Text;
 
-            if (string.IsNullOrEmpty(currentVegetableName) || string.IsNullOrWhiteSpace(currentVegetableName))
+            if (string.IsNullOrEmpty(currentPersonName) || string.IsNullOrWhiteSpace(currentPersonName))
             {
                 return;
             }
 
-            var vegetable = currentVegetable.Value as Vegetable;
-            if (vegetable != null)
+            var person = currentPerson.Value as Vegetable;
+            if (person != null)
             {
-                vegetable.Name = currentVegetableName;
+                person.Name = currentPersonName;
             }
 
             DrawCurrentSalad();
@@ -192,7 +233,7 @@ namespace Client
                     var deserializedSalad = XmlHelper.DeserializeFromFile<List<Vegetable>>(filePath, _vegetableTypes.ToArray());
                     InitializeNewSalad(deserializedSalad);
                 }
-                catch(Exception)
+                catch(Exception ex)
                 {
                     InitializeNewSalad();
                 }
