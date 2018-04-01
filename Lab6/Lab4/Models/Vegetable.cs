@@ -2,8 +2,8 @@
 {
     public abstract class Vegetable
     {
-        public string Name { get; set; }
-        public string FullName => GetType().Name + " " + Name;
+        public virtual string Name { get; set; }
+        public virtual string FullName => GetType().Name + " " + Name;
 
         protected Vegetable(string name)
         {

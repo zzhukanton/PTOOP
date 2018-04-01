@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models.Groats", "Models.Groats\Models.Groats.csproj", "{A482F203-E015-400D-B56B-DCACA5DB0C66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnknownModels", "UnknownModels\UnknownModels.csproj", "{490709C3-F26E-4E9A-8D84-A001C7D3B60B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.csproj", "{FE1E4457-F236-47F5-BF63-B6963FD47DA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{A482F203-E015-400D-B56B-DCACA5DB0C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A482F203-E015-400D-B56B-DCACA5DB0C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A482F203-E015-400D-B56B-DCACA5DB0C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{490709C3-F26E-4E9A-8D84-A001C7D3B60B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{490709C3-F26E-4E9A-8D84-A001C7D3B60B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{490709C3-F26E-4E9A-8D84-A001C7D3B60B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{490709C3-F26E-4E9A-8D84-A001C7D3B60B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE1E4457-F236-47F5-BF63-B6963FD47DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1E4457-F236-47F5-BF63-B6963FD47DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1E4457-F236-47F5-BF63-B6963FD47DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1E4457-F236-47F5-BF63-B6963FD47DA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
