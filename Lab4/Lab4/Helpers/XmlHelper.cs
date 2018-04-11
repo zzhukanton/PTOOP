@@ -85,6 +85,23 @@ namespace Helpers
 
             return result;
         }
+        public static T XmlDeserializeFromString<T>(string objectData, Type[] extraTypes)
+        {
+            return (T)XmlDeserializeFromString(objectData, typeof(T), extraTypes);
+        }
+
+        public static object XmlDeserializeFromString(string objectData, Type type, Type[] extraTypes)
+        {
+            var serializer = new XmlSerializer(type, extraTypes);
+            object result;
+
+            using (TextReader reader = new StringReader(objectData))
+            {
+                result = serializer.Deserialize(reader);
+            }
+
+            return result;
+        }
 
         public static void Serialize<TObject>(TObject @object, string filePath)
         {

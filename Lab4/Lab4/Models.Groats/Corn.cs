@@ -4,6 +4,6 @@
     {
         public Corn(string name) : base(name) { }
 
-        public Corn() : base("Corn") { }
+        public Corn() : base("Korn") { }
     }
 }

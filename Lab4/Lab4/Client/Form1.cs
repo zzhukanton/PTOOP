@@ -22,7 +22,7 @@ namespace Client
 
         private List<Type> LoadPlugins()
         {
-            var personTypes = new List<Type>();
+            var vegTypes = new List<Type>();
             string[] assemblies = Directory.GetFiles("Plugins", "*.dll");
 
             foreach (String file in assemblies)
@@ -42,16 +42,14 @@ namespace Client
                         // add types to list of startup tasks
                         foreach (Type type in query)
                         {
-                            personTypes.Add(type);
+                            vegTypes.Add(type);
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                }
+                catch (Exception) { }
             }
 
-            return personTypes;
+            return vegTypes;
         }
         
         private void button5_Click(object sender, EventArgs e)
@@ -69,7 +67,7 @@ namespace Client
             _currentSalad = new Salad(deserializedSalad);
             
             lbxPeople.Items.Clear();
-            txbPersonName.Text = "";
+            txbVegetableName.Text = "";
 
             InitializeVegetableTypes();
         }
@@ -78,16 +76,16 @@ namespace Client
         {
             _vegetableTypes = LoadVegetableTypes();
 
-            ddlPersonType.Items.Clear();
+            ddlVegetableType.Items.Clear();
             foreach (var vegetableType in _vegetableTypes)
             {
-                ddlPersonType.Items.Add(new ComboboxItem {Text = vegetableType.Name, Value = vegetableType });
+                ddlVegetableType.Items.Add(new ComboboxItem {Text = vegetableType.Name, Value = vegetableType });
             }
 
             var pluginTypes = LoadPlugins();
             foreach (var vegetableType in pluginTypes)
             {
-                ddlPersonType.Items.Add(new ComboboxItem { Text = vegetableType.Name, Value = vegetableType });
+                ddlVegetableType.Items.Add(new ComboboxItem { Text = vegetableType.Name, Value = vegetableType });
             }
         }
 
@@ -110,7 +108,7 @@ namespace Client
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-            var selectedPersonType = ddlPersonType.SelectedItem as ComboboxItem;
+            var selectedPersonType = ddlVegetableType.SelectedItem as ComboboxItem;
 
             if (selectedPersonType == null)
             {
@@ -141,10 +139,10 @@ namespace Client
 
         private void btnTiredTester_Click(object sender, EventArgs e)
         {
-            foreach (var item in ddlPersonType.Items)
+            foreach (var item in ddlVegetableType.Items)
             {
-                ddlPersonType.SelectedItem = item;
-                btnAddPerson.PerformClick();
+                ddlVegetableType.SelectedItem = item;
+                btnAddVegetable.PerformClick();
             }
         }
 
@@ -157,7 +155,7 @@ namespace Client
                 return;
             }
 
-            txbPersonName.Text = (currentPerson.Value as Vegetable)?.Name;
+            txbVegetableName.Text = (currentPerson.Value as Vegetable)?.Name;
         }
 
         private void btnEditPersonName_Click(object sender, EventArgs e)
@@ -169,7 +167,7 @@ namespace Client
                 return;
             }
 
-            var currentPersonName = txbPersonName.Text;
+            var currentPersonName = txbVegetableName.Text;
 
             if (string.IsNullOrEmpty(currentPersonName) || string.IsNullOrWhiteSpace(currentPersonName))
             {
@@ -216,9 +214,7 @@ namespace Client
                     var serializedSalad = XmlHelper.Serialize(_currentSalad?.Ingridients, _vegetableTypes.ToArray());
                     File.WriteAllText(filePath, serializedSalad, Encoding.UTF8);
                 }
-                catch (IOException)
-                {
-                }
+                catch (IOException) { }
             }
         }
 

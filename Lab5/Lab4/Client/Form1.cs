@@ -14,9 +14,11 @@ namespace Client
     {
         private Salad _currentSalad;
         private List<Type> _vegetableTypes;
-         
+        private AesEncryptionUtility _aesEncryptionUtility;
+
         public Form1()
         {
+            _aesEncryptionUtility = new AesEncryptionUtility();
             InitializeComponent();
         }
 
@@ -214,6 +216,12 @@ namespace Client
                 try
                 {
                     var serializedSalad = XmlHelper.Serialize(_currentSalad?.Ingridients, _vegetableTypes.ToArray());
+
+                    if (cbxEncryptData.Checked)
+                    {
+                        serializedSalad = _aesEncryptionUtility.Encrypt(serializedSalad);
+                    }
+
                     File.WriteAllText(filePath, serializedSalad, Encoding.UTF8);
                 }
                 catch (IOException)
@@ -230,10 +238,17 @@ namespace Client
                 string filePath = openFileDialog1.FileName;
                 try
                 {
+                    var fileString = File.ReadAllText(filePath);
+
+                    if (cbxEncryptData.Checked)
+                    {
+                        fileString = _aesEncryptionUtility.Decrypt(fileString);
+                    }
+
                     var deserializedSalad = XmlHelper.DeserializeFromFile<List<Vegetable>>(filePath, _vegetableTypes.ToArray());
                     InitializeNewSalad(deserializedSalad);
                 }
-                catch(Exception ex)
+                catch(Exception)
                 {
                     InitializeNewSalad();
                 }

@@ -4,6 +4,6 @@
     {
         public Barley(string name) : base(name) { }
 
-        public Barley() : base("Barley") { }
+        public Barley() : base("Stinson") { }
     }
 }

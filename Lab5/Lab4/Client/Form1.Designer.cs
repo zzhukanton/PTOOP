@@ -42,6 +42,7 @@
             this.btnTiredTester = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.cbxEncryptData = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lbxPeople
@@ -152,11 +153,22 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // cbxEncryptData
+            // 
+            this.cbxEncryptData.AutoSize = true;
+            this.cbxEncryptData.Location = new System.Drawing.Point(13, 259);
+            this.cbxEncryptData.Name = "cbxEncryptData";
+            this.cbxEncryptData.Size = new System.Drawing.Size(134, 17);
+            this.cbxEncryptData.TabIndex = 12;
+            this.cbxEncryptData.Text = "Run in protected mode";
+            this.cbxEncryptData.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 346);
+            this.Controls.Add(this.cbxEncryptData);
             this.Controls.Add(this.btnTiredTester);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEditPersonName);
@@ -192,6 +204,7 @@
         private System.Windows.Forms.Button btnTiredTester;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.CheckBox cbxEncryptData;
     }
 }
 
