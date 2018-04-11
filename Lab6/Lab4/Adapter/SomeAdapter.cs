@@ -23,7 +23,7 @@ namespace Adapter
             {
                 if (_unknownVegetable == null)
                 {
-                    return "WeirdCreatureAdapter for unknown creature!";
+                    return "SomeAdapter for something unexpected";
                 }
 
                 return _unknownVegetable.GetType().Name + " " + _unknownVegetable.UnknownName;

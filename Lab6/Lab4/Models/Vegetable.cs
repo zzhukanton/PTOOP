@@ -10,8 +10,6 @@
             Name = name;
         }
 
-        protected Vegetable()
-        {
-        }
+        protected Vegetable() { }
     }
 }

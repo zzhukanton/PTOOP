@@ -14,7 +14,8 @@ namespace Client
     {
         private Salad _currentSalad;
         private List<Type> _vegetableTypes;
-         
+        private readonly AesEncryptionUtility _aesEncryptionUtility;
+
         public Form1()
         {
             InitializeComponent();
@@ -68,26 +69,30 @@ namespace Client
         {
             _currentSalad = new Salad(deserializedSalad);
             
-            lbxPeople.Items.Clear();
-            txbPersonName.Text = "";
+            lbxVegetables.Items.Clear();
+            txbVegetableName.Text = "";
 
             InitializeVegetableTypes();
         }
 
         private void InitializeVegetableTypes()
         {
-            _vegetableTypes = LoadVegetableTypes();
+            _vegetableTypes = new List<Type>();
+            ddlVegetableType.Items.Clear();
 
-            ddlPersonType.Items.Clear();
-            foreach (var vegetableType in _vegetableTypes)
-            {
-                ddlPersonType.Items.Add(new ComboboxItem {Text = vegetableType.Name, Value = vegetableType });
-            }
+            var pluginTypes = PluginLoader.Instance.LoadAllVegetableTypes();
 
-            var pluginTypes = LoadPlugins();
             foreach (var vegetableType in pluginTypes)
             {
-                ddlPersonType.Items.Add(new ComboboxItem { Text = vegetableType.Name, Value = vegetableType });
+                if (!_vegetableTypes.Contains(vegetableType))
+                {
+                    _vegetableTypes.Add(vegetableType);
+                }
+            }
+
+            foreach (var vegetableType in _vegetableTypes)
+            {
+                ddlVegetableType.Items.Add(new ComboboxItem { Text = vegetableType.Name, Value = vegetableType });
             }
         }
 
@@ -110,7 +115,7 @@ namespace Client
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-            var selectedPersonType = ddlPersonType.SelectedItem as ComboboxItem;
+            var selectedPersonType = ddlVegetableType.SelectedItem as ComboboxItem;
 
             if (selectedPersonType == null)
             {
@@ -131,20 +136,20 @@ namespace Client
 
         private void DrawCurrentSalad()
         {
-            lbxPeople.Items.Clear();
+            lbxVegetables.Items.Clear();
 
             foreach (var vegetable in _currentSalad.Ingridients)
             {
-                lbxPeople.Items.Add(new ComboboxItem {Text = vegetable.FullName, Value = vegetable });
+                lbxVegetables.Items.Add(new ComboboxItem {Text = vegetable.FullName, Value = vegetable });
             }
         }
 
         private void btnTiredTester_Click(object sender, EventArgs e)
         {
-            foreach (var item in ddlPersonType.Items)
+            foreach (var item in ddlVegetableType.Items)
             {
-                ddlPersonType.SelectedItem = item;
-                btnAddPerson.PerformClick();
+                ddlVegetableType.SelectedItem = item;
+                btnAddVegetable.PerformClick();
             }
         }
 
@@ -157,19 +162,19 @@ namespace Client
                 return;
             }
 
-            txbPersonName.Text = (currentPerson.Value as Vegetable)?.Name;
+            txbVegetableName.Text = (currentPerson.Value as Vegetable)?.Name;
         }
 
         private void btnEditPersonName_Click(object sender, EventArgs e)
         {
-            var currentPerson = lbxPeople.SelectedItem as ComboboxItem;
+            var currentPerson = lbxVegetables.SelectedItem as ComboboxItem;
 
             if (currentPerson == null)
             {
                 return;
             }
 
-            var currentPersonName = txbPersonName.Text;
+            var currentPersonName = txbVegetableName.Text;
 
             if (string.IsNullOrEmpty(currentPersonName) || string.IsNullOrWhiteSpace(currentPersonName))
             {
@@ -187,7 +192,7 @@ namespace Client
 
         private void btnRemoveSelectedPerson_Click(object sender, EventArgs e)
         {
-            var currentVegetable = lbxPeople.SelectedItem as ComboboxItem;
+            var currentVegetable = lbxVegetables.SelectedItem as ComboboxItem;
 
             if (currentVegetable == null)
             {
@@ -214,6 +219,11 @@ namespace Client
                 try
                 {
                     var serializedSalad = XmlHelper.Serialize(_currentSalad?.Ingridients, _vegetableTypes.ToArray());
+                    if (cbxEncryptData.Checked)
+                    {
+                        serializedSalad = _aesEncryptionUtility.Encrypt(serializedSalad);
+                    }
+
                     File.WriteAllText(filePath, serializedSalad, Encoding.UTF8);
                 }
                 catch (IOException)
@@ -230,6 +240,12 @@ namespace Client
                 string filePath = openFileDialog1.FileName;
                 try
                 {
+                    var fileString = File.ReadAllText(filePath);
+
+                    if (cbxEncryptData.Checked)
+                    {
+                        fileString = _aesEncryptionUtility.Decrypt(fileString);
+                    }
                     var deserializedSalad = XmlHelper.DeserializeFromFile<List<Vegetable>>(filePath, _vegetableTypes.ToArray());
                     InitializeNewSalad(deserializedSalad);
                 }

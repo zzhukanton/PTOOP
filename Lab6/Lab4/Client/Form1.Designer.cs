@@ -28,149 +28,159 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.lbxPeople = new System.Windows.Forms.ListBox();
-            this.btnLoadKingdom = new System.Windows.Forms.Button();
-            this.btnSaveKingdom = new System.Windows.Forms.Button();
-            this.ddlPersonType = new System.Windows.Forms.ComboBox();
-            this.btnAddPerson = new System.Windows.Forms.Button();
-            this.btnRemoveSelectedPerson = new System.Windows.Forms.Button();
-            this.btnNewKingdom = new System.Windows.Forms.Button();
-            this.txbPersonName = new System.Windows.Forms.TextBox();
-            this.btnEditPersonName = new System.Windows.Forms.Button();
+            this.lbxVegetables = new System.Windows.Forms.ListBox();
+            this.btnLoadSalad = new System.Windows.Forms.Button();
+            this.btnSaveSalad = new System.Windows.Forms.Button();
+            this.ddlVegetableType = new System.Windows.Forms.ComboBox();
+            this.btnAddVegetable = new System.Windows.Forms.Button();
+            this.btnRemoveSelectedVegetable = new System.Windows.Forms.Button();
+            this.btnNewSalad = new System.Windows.Forms.Button();
+            this.txbVegetableName = new System.Windows.Forms.TextBox();
+            this.btnEditVegetableName = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnTiredTester = new System.Windows.Forms.Button();
+            this.btnRandomSalad = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.cbxEncryptData = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // lbxPeople
+            // lbxVegetables
             // 
-            this.lbxPeople.FormattingEnabled = true;
-            this.lbxPeople.Location = new System.Drawing.Point(361, 54);
-            this.lbxPeople.Name = "lbxPeople";
-            this.lbxPeople.Size = new System.Drawing.Size(399, 277);
-            this.lbxPeople.TabIndex = 0;
-            this.lbxPeople.SelectedIndexChanged += new System.EventHandler(this.lbxPeople_SelectedIndexChanged);
+            this.lbxVegetables.FormattingEnabled = true;
+            this.lbxVegetables.Location = new System.Drawing.Point(12, 31);
+            this.lbxVegetables.Name = "lbxVegetables";
+            this.lbxVegetables.Size = new System.Drawing.Size(128, 277);
+            this.lbxVegetables.TabIndex = 0;
+            this.lbxVegetables.SelectedIndexChanged += new System.EventHandler(this.lbxPeople_SelectedIndexChanged);
             // 
-            // btnLoadKingdom
+            // btnLoadSalad
             // 
-            this.btnLoadKingdom.Location = new System.Drawing.Point(127, 13);
-            this.btnLoadKingdom.Name = "btnLoadKingdom";
-            this.btnLoadKingdom.Size = new System.Drawing.Size(121, 23);
-            this.btnLoadKingdom.TabIndex = 1;
-            this.btnLoadKingdom.Text = "Load salad";
-            this.btnLoadKingdom.UseVisualStyleBackColor = true;
-            this.btnLoadKingdom.Click += new System.EventHandler(this.btnLoadKingdom_Click);
+            this.btnLoadSalad.Location = new System.Drawing.Point(163, 60);
+            this.btnLoadSalad.Name = "btnLoadSalad";
+            this.btnLoadSalad.Size = new System.Drawing.Size(118, 23);
+            this.btnLoadSalad.TabIndex = 1;
+            this.btnLoadSalad.Text = "Load salad";
+            this.btnLoadSalad.UseVisualStyleBackColor = true;
+            this.btnLoadSalad.Click += new System.EventHandler(this.btnLoadKingdom_Click);
             // 
-            // btnSaveKingdom
+            // btnSaveSalad
             // 
-            this.btnSaveKingdom.Location = new System.Drawing.Point(245, 13);
-            this.btnSaveKingdom.Name = "btnSaveKingdom";
-            this.btnSaveKingdom.Size = new System.Drawing.Size(110, 23);
-            this.btnSaveKingdom.TabIndex = 2;
-            this.btnSaveKingdom.Text = "Save salad";
-            this.btnSaveKingdom.UseVisualStyleBackColor = true;
-            this.btnSaveKingdom.Click += new System.EventHandler(this.btnSaveKingdom_Click);
+            this.btnSaveSalad.Location = new System.Drawing.Point(163, 89);
+            this.btnSaveSalad.Name = "btnSaveSalad";
+            this.btnSaveSalad.Size = new System.Drawing.Size(118, 23);
+            this.btnSaveSalad.TabIndex = 2;
+            this.btnSaveSalad.Text = "Save salad";
+            this.btnSaveSalad.UseVisualStyleBackColor = true;
+            this.btnSaveSalad.Click += new System.EventHandler(this.btnSaveKingdom_Click);
             // 
-            // ddlPersonType
+            // ddlVegetableType
             // 
-            this.ddlPersonType.FormattingEnabled = true;
-            this.ddlPersonType.Location = new System.Drawing.Point(12, 58);
-            this.ddlPersonType.Name = "ddlPersonType";
-            this.ddlPersonType.Size = new System.Drawing.Size(343, 21);
-            this.ddlPersonType.TabIndex = 3;
+            this.ddlVegetableType.FormattingEnabled = true;
+            this.ddlVegetableType.Location = new System.Drawing.Point(163, 132);
+            this.ddlVegetableType.Name = "ddlVegetableType";
+            this.ddlVegetableType.Size = new System.Drawing.Size(118, 21);
+            this.ddlVegetableType.TabIndex = 3;
             // 
-            // btnAddPerson
+            // btnAddVegetable
             // 
-            this.btnAddPerson.Location = new System.Drawing.Point(12, 85);
-            this.btnAddPerson.Name = "btnAddPerson";
-            this.btnAddPerson.Size = new System.Drawing.Size(343, 23);
-            this.btnAddPerson.TabIndex = 4;
-            this.btnAddPerson.Text = "Add vegetable";
-            this.btnAddPerson.UseVisualStyleBackColor = true;
-            this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
+            this.btnAddVegetable.Location = new System.Drawing.Point(163, 159);
+            this.btnAddVegetable.Name = "btnAddVegetable";
+            this.btnAddVegetable.Size = new System.Drawing.Size(118, 23);
+            this.btnAddVegetable.TabIndex = 4;
+            this.btnAddVegetable.Text = "Add vegetable";
+            this.btnAddVegetable.UseVisualStyleBackColor = true;
+            this.btnAddVegetable.Click += new System.EventHandler(this.btnAddPerson_Click);
             // 
-            // btnRemoveSelectedPerson
+            // btnRemoveSelectedVegetable
             // 
-            this.btnRemoveSelectedPerson.Location = new System.Drawing.Point(12, 308);
-            this.btnRemoveSelectedPerson.Name = "btnRemoveSelectedPerson";
-            this.btnRemoveSelectedPerson.Size = new System.Drawing.Size(343, 23);
-            this.btnRemoveSelectedPerson.TabIndex = 5;
-            this.btnRemoveSelectedPerson.Text = "Remove selected";
-            this.btnRemoveSelectedPerson.UseVisualStyleBackColor = true;
-            this.btnRemoveSelectedPerson.Click += new System.EventHandler(this.btnRemoveSelectedPerson_Click);
+            this.btnRemoveSelectedVegetable.Location = new System.Drawing.Point(163, 285);
+            this.btnRemoveSelectedVegetable.Name = "btnRemoveSelectedVegetable";
+            this.btnRemoveSelectedVegetable.Size = new System.Drawing.Size(118, 23);
+            this.btnRemoveSelectedVegetable.TabIndex = 5;
+            this.btnRemoveSelectedVegetable.Text = "Remove selected";
+            this.btnRemoveSelectedVegetable.UseVisualStyleBackColor = true;
+            this.btnRemoveSelectedVegetable.Click += new System.EventHandler(this.btnRemoveSelectedPerson_Click);
             // 
-            // btnNewKingdom
+            // btnNewSalad
             // 
-            this.btnNewKingdom.Location = new System.Drawing.Point(12, 13);
-            this.btnNewKingdom.Name = "btnNewKingdom";
-            this.btnNewKingdom.Size = new System.Drawing.Size(118, 23);
-            this.btnNewKingdom.TabIndex = 6;
-            this.btnNewKingdom.Text = "New salad";
-            this.btnNewKingdom.UseVisualStyleBackColor = true;
-            this.btnNewKingdom.Click += new System.EventHandler(this.button5_Click);
+            this.btnNewSalad.Location = new System.Drawing.Point(163, 31);
+            this.btnNewSalad.Name = "btnNewSalad";
+            this.btnNewSalad.Size = new System.Drawing.Size(118, 23);
+            this.btnNewSalad.TabIndex = 6;
+            this.btnNewSalad.Text = "New salad";
+            this.btnNewSalad.UseVisualStyleBackColor = true;
+            this.btnNewSalad.Click += new System.EventHandler(this.button5_Click);
             // 
-            // txbPersonName
+            // txbVegetableName
             // 
-            this.txbPersonName.Location = new System.Drawing.Point(12, 164);
-            this.txbPersonName.Name = "txbPersonName";
-            this.txbPersonName.Size = new System.Drawing.Size(343, 20);
-            this.txbPersonName.TabIndex = 7;
+            this.txbVegetableName.Location = new System.Drawing.Point(163, 202);
+            this.txbVegetableName.Name = "txbVegetableName";
+            this.txbVegetableName.Size = new System.Drawing.Size(118, 20);
+            this.txbVegetableName.TabIndex = 7;
             // 
-            // btnEditPersonName
+            // btnEditVegetableName
             // 
-            this.btnEditPersonName.Location = new System.Drawing.Point(13, 191);
-            this.btnEditPersonName.Name = "btnEditPersonName";
-            this.btnEditPersonName.Size = new System.Drawing.Size(342, 23);
-            this.btnEditPersonName.TabIndex = 8;
-            this.btnEditPersonName.Text = "Edit title";
-            this.btnEditPersonName.UseVisualStyleBackColor = true;
-            this.btnEditPersonName.Click += new System.EventHandler(this.btnEditPersonName_Click);
+            this.btnEditVegetableName.Location = new System.Drawing.Point(163, 228);
+            this.btnEditVegetableName.Name = "btnEditVegetableName";
+            this.btnEditVegetableName.Size = new System.Drawing.Size(118, 23);
+            this.btnEditVegetableName.TabIndex = 8;
+            this.btnEditVegetableName.Text = "Edit title";
+            this.btnEditVegetableName.UseVisualStyleBackColor = true;
+            this.btnEditVegetableName.Click += new System.EventHandler(this.btnEditPersonName_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(361, 16);
+            this.label1.Location = new System.Drawing.Point(12, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "The VEGETABLES";
             // 
-            // btnTiredTester
+            // btnRandomSalad
             // 
-            this.btnTiredTester.Location = new System.Drawing.Point(651, 16);
-            this.btnTiredTester.Name = "btnTiredTester";
-            this.btnTiredTester.Size = new System.Drawing.Size(109, 23);
-            this.btnTiredTester.TabIndex = 10;
-            this.btnTiredTester.Text = "When too tired...";
-            this.btnTiredTester.UseVisualStyleBackColor = true;
-            this.btnTiredTester.Click += new System.EventHandler(this.btnTiredTester_Click);
+            this.btnRandomSalad.Location = new System.Drawing.Point(12, 314);
+            this.btnRandomSalad.Name = "btnRandomSalad";
+            this.btnRandomSalad.Size = new System.Drawing.Size(128, 23);
+            this.btnRandomSalad.TabIndex = 10;
+            this.btnRandomSalad.Text = "RandomSalad";
+            this.btnRandomSalad.UseVisualStyleBackColor = true;
+            this.btnRandomSalad.Click += new System.EventHandler(this.btnTiredTester_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // cbxEncryptData
+            // 
+            this.cbxEncryptData.AutoSize = true;
+            this.cbxEncryptData.Location = new System.Drawing.Point(163, 318);
+            this.cbxEncryptData.Name = "cbxEncryptData";
+            this.cbxEncryptData.Size = new System.Drawing.Size(86, 17);
+            this.cbxEncryptData.TabIndex = 12;
+            this.cbxEncryptData.Text = "Encrypt data";
+            this.cbxEncryptData.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 346);
-            this.Controls.Add(this.btnTiredTester);
+            this.ClientSize = new System.Drawing.Size(302, 350);
+            this.Controls.Add(this.cbxEncryptData);
+            this.Controls.Add(this.btnRandomSalad);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnEditPersonName);
-            this.Controls.Add(this.txbPersonName);
-            this.Controls.Add(this.btnNewKingdom);
-            this.Controls.Add(this.btnRemoveSelectedPerson);
-            this.Controls.Add(this.btnAddPerson);
-            this.Controls.Add(this.ddlPersonType);
-            this.Controls.Add(this.btnSaveKingdom);
-            this.Controls.Add(this.btnLoadKingdom);
-            this.Controls.Add(this.lbxPeople);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Controls.Add(this.btnEditVegetableName);
+            this.Controls.Add(this.txbVegetableName);
+            this.Controls.Add(this.btnNewSalad);
+            this.Controls.Add(this.btnRemoveSelectedVegetable);
+            this.Controls.Add(this.btnAddVegetable);
+            this.Controls.Add(this.ddlVegetableType);
+            this.Controls.Add(this.btnSaveSalad);
+            this.Controls.Add(this.btnLoadSalad);
+            this.Controls.Add(this.lbxVegetables);
             this.Name = "Form1";
-            this.Text = "The salad";
+            this.Text = "SALAD";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -179,19 +189,20 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lbxPeople;
-        private System.Windows.Forms.Button btnLoadKingdom;
-        private System.Windows.Forms.Button btnSaveKingdom;
-        private System.Windows.Forms.ComboBox ddlPersonType;
-        private System.Windows.Forms.Button btnAddPerson;
-        private System.Windows.Forms.Button btnRemoveSelectedPerson;
-        private System.Windows.Forms.Button btnNewKingdom;
-        private System.Windows.Forms.TextBox txbPersonName;
-        private System.Windows.Forms.Button btnEditPersonName;
+        private System.Windows.Forms.ListBox lbxVegetables;
+        private System.Windows.Forms.Button btnLoadSalad;
+        private System.Windows.Forms.Button btnSaveSalad;
+        private System.Windows.Forms.ComboBox ddlVegetableType;
+        private System.Windows.Forms.Button btnAddVegetable;
+        private System.Windows.Forms.Button btnRemoveSelectedVegetable;
+        private System.Windows.Forms.Button btnNewSalad;
+        private System.Windows.Forms.TextBox txbVegetableName;
+        private System.Windows.Forms.Button btnEditVegetableName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnTiredTester;
+        private System.Windows.Forms.Button btnRandomSalad;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.CheckBox cbxEncryptData;
     }
 }
 
