@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Services.Contracts
+﻿namespace Services.Contracts
 {
     public interface IDrawableFigure : IFigure
     {

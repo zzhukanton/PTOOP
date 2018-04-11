@@ -1,5 +1,4 @@
-﻿using System;
-using Services.Contracts;
+﻿using Services.Contracts;
 
 namespace Services.Visitors
 {

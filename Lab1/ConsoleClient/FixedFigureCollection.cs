@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Services;
 using Services.Contracts;
@@ -7,7 +6,7 @@ using Services.Visitors;
 
 namespace ConsoleClient
 {
-    internal class FixedFigureCollection : IEnumerable<IDrawableFigure>
+    public class FixedFigureCollection : IEnumerable<IDrawableFigure>
     {
         public IEnumerator<IDrawableFigure> GetEnumerator()
         {
@@ -25,7 +24,7 @@ namespace ConsoleClient
         }
     }
 
-    internal class VisitedFigureCollection : IEnumerable<IDrawableFigure>
+    public class VisitedFigureCollection : IEnumerable<IDrawableFigure>
     {
         public IEnumerator<IDrawableFigure> GetEnumerator()
         {
@@ -34,10 +33,7 @@ namespace ConsoleClient
 
             foreach (var staticFigure in staticFigures)
             {
-                if (staticFigure == null)
-                {
-                    continue;
-                }
+                if (staticFigure == null) continue;
 
                 staticFigure.Accept(visitor);
 
