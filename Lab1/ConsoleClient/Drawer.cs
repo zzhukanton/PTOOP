@@ -8,10 +8,7 @@ namespace ConsoleClient
     {
         public void DrawFigures(IEnumerable<IDrawableFigure> figures)
         {
-            if (figures == null)
-            {
-                return;
-            }
+            if (figures == null) return;
 
             foreach (var drawableFigure in figures)
             {
@@ -21,10 +18,7 @@ namespace ConsoleClient
 
         private void DrawFigure(IDrawableFigure drawableFigure)
         {
-            if (drawableFigure == null)
-            {
-                return;
-            }
+            if (drawableFigure == null) return;
 
             Console.WriteLine($"Figure: {drawableFigure.GetType().Name}  Color: {drawableFigure.Color}  X:{drawableFigure.X}  Y:{drawableFigure.Y}");
             Console.WriteLine();

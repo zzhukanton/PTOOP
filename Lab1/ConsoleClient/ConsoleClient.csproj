@@ -45,7 +45,7 @@
     <Compile Include="Drawer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaticDrawableFigureCollection.cs" />
+    <Compile Include="FixedFigureCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

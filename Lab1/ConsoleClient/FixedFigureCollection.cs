@@ -7,7 +7,7 @@ using Services.Visitors;
 
 namespace ConsoleClient
 {
-    internal class StaticDrawableFigureCollection : IEnumerable<IDrawableFigure>
+    internal class FixedFigureCollection : IEnumerable<IDrawableFigure>
     {
         public IEnumerator<IDrawableFigure> GetEnumerator()
         {
@@ -25,11 +25,11 @@ namespace ConsoleClient
         }
     }
 
-    internal class StaticExtendableFigureCollection : IEnumerable<IDrawableFigure>
+    internal class VisitedFigureCollection : IEnumerable<IDrawableFigure>
     {
         public IEnumerator<IDrawableFigure> GetEnumerator()
         {
-            var staticFigures = new StaticDrawableFigureCollection();
+            var staticFigures = new FixedFigureCollection();
             var visitor = new FigureVisitor();
 
             foreach (var staticFigure in staticFigures)

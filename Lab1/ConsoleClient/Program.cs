@@ -8,7 +8,7 @@ namespace ConsoleClient
     {
         static void Main(string[] args)
         {
-            IEnumerable<IDrawableFigure> figureCollection = new StaticDrawableFigureCollection();
+            IEnumerable<IDrawableFigure> figureCollection = new FixedFigureCollection();
             var figureDrawer = new Drawer();
 
             Console.WriteLine("Start drawing figure list:");
@@ -20,7 +20,7 @@ namespace ConsoleClient
             Console.WriteLine("Drawing blue figures at 20, 20:");
             Console.WriteLine();
 
-            figureCollection = new StaticExtendableFigureCollection();
+            figureCollection = new VisitedFigureCollection();
             figureDrawer.DrawFigures(figureCollection);
 
             Console.ReadLine();
