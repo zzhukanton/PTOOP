@@ -20,17 +20,8 @@ namespace ConsoleClient
         {
             if (drawableFigure == null) return;
 
-            var currentColor = Console.ForegroundColor;
-
-            Console.ForegroundColor = drawableFigure.Color;
-
-            Console.WriteLine("Figure: " + drawableFigure.GetType().Name);
-            Console.WriteLine("Color: " + drawableFigure.Color);
-            Console.WriteLine("X: " + drawableFigure.X);
-            Console.WriteLine("Y: " + drawableFigure.Y);
+            Console.WriteLine($"Figure: {drawableFigure.GetType().Name}  Color: {drawableFigure.Color}  X:{drawableFigure.X}  Y:{drawableFigure.Y}");
             Console.WriteLine();
-
-            Console.ForegroundColor = currentColor;
         }
     }
 }

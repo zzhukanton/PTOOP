@@ -120,29 +120,7 @@
   <metadata name="colorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAKX/FACl/3IApf+2AKX/1ACl/9QApf+2AKX/cgCl/xQAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAApf8AAKX/cACl//IApf/YAKX/iACl/2IApf9iAKX/iACl/9gApf/yAKX/cACl
-        /wAAAAAAAAAAAAAAAAAApf8AAKX/mgCl//AApf9eAKX/AgAAAAAAAAAAAAAAAAAAAAAApf8CAKX/YACl
-        //AApf+YAKX/AAAAAAAAAAAAAKX/cACl//AApf80AAAAAAAAAAAApf8UAKX/NACl/zAApf8QAAAAAAAA
-        AAAApf80AKX/8ACl/24AAAAAAKX/FACl//IApf9gAAAAAAAAAAAApf86AKX/+gCl/+YApf/eAKX/4gCl
-        /7AApf8YAAAAAACl/2AApf/yAKX/FACl/3IApf/aAKX/AgAAAAAAAAAAAKX/AgCl/woAAAAAAAAAAAAA
-        AAAApf8WAKX/agCl/wIApf8CAKX/2gCl/3IApf+2AKX/igAAAAAAAAAAAKX/EgCl/yAApf8AAAAAAAAA
-        AAAApf8AAKX/IACl/xIApf8IAAAAAACl/4oApf+0AKX/1ACl/2IApf8CAKX/lACl//oApf//AKX/vgCl
-        /wYApf8GAKX/vgCl//8Apf/6AKX/kgCl/wAApf9kAKX/1ACl/9QApf+EAKX/fACl//8Apf//AKX//wCl
-        //8Apf9KAKX/SgCl//8Apf//AKX//wCl//8Apf98AKX/hACl/9QApf/eAKX//wCl//QApf//AKX//wCl
-        //8Apf//AKX/2ACl/9oApf//AKX//wCl//8Apf//AKX/9ACl//8Apf/cAKX/jgCl/9oApf8iAKX/ZgCl
-        /3AApf9wAKX/VACl/04Apf9MAKX/VACl/3AApf9wAKX/ZgCl/yIApf/cAKX/jACl/xQApf/yAKX/YAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApf9iAKX/8ACl/xQAAAAAAKX/bgCl
-        //IApf82AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApf84AKX/8gCl/2wAAAAAAAAAAACl
-        /wAApf+WAKX/8gCl/2QApf8CAAAAAAAAAAAAAAAAAAAAAACl/wIApf9kAKX/8gCl/5YApf8AAAAAAAAA
-        AAAAAAAAAKX/AACl/2wApf/wAKX/3ACl/4wApf9kAKX/ZgCl/4wApf/cAKX/8ACl/2wApf8AAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAKX/EgCl/3AApf+0AKX/1ACl/9AApf+0AKX/bgCl/xIAAAAAAAAAAAAA
-        AAAAAAAA/D8AAPGPAADP8wAA3/sAALwdAAC//QAAP/wAAGGGAAAhhAAAAAAAAD/8AAC//QAA3/sAAM/z
-        AADxjwAA/D8AAA==
-</value>
-  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>32</value>
+  </metadata>
 </root>

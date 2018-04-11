@@ -4,6 +4,6 @@ namespace WinFormClient.Drawers
 {
     internal interface IDrawer
     {
-        void Draw(Graphics graphics, Pen pen, int x, int y);
+        void Draw(Graphics g, Pen pen, int x, int y);
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using Services.Visitors;
 
 namespace Services
@@ -7,7 +6,7 @@ namespace Services
     {
         public Circle() { }
 
-        public Circle(ConsoleColor color, int x, int y) : base(color, x, y) { }
+        public Circle(string color, int x, int y) : base(color, x, y) { }
         
         public override void Accept(IFigureVisitor visitor) => visitor?.Visit(this);
     }

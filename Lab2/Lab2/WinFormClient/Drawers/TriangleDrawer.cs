@@ -4,7 +4,7 @@ namespace WinFormClient.Drawers
 {
     internal class TriangleDrawer : BaseDrawer
     {
-        public override void Draw(Graphics graphics, Pen pen, int x, int y)
+        public override void Draw(Graphics g, Pen pen, int x, int y)
         {
             Point[] p = new Point[4];
             p[0].X = x;
@@ -15,7 +15,7 @@ namespace WinFormClient.Drawers
             p[2].Y = y + 50;
             p[3].X = x;
             p[3].Y = y;
-            graphics.DrawPolygon(pen, p);
+            g.DrawPolygon(pen, p);
         }
     }
 }

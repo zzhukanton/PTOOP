@@ -8,19 +8,19 @@ namespace ConsoleClient
     {
         static void Main(string[] args)
         {
-            IEnumerable<IDrawableFigure> figureCollection = new StaticDrawableFigureCollection();
+            IEnumerable<IDrawableFigure> figureCollection = new FixedFigureCollection();
             var figureDrawer = new FigureDrawer();
 
-            Console.WriteLine("Drawing collection of figures...");
+            Console.WriteLine("Start drawing figure list:");
             Console.WriteLine();
 
             figureDrawer.DrawFigures(figureCollection);
 
             Console.WriteLine();
-            Console.WriteLine("Drawing extendable figures...");
+            Console.WriteLine("Drawing blue figures at 20, 20:");
             Console.WriteLine();
 
-            figureCollection = new StaticExtendableFigureCollection();
+            figureCollection = new VisitedFigureCollection();
             figureDrawer.DrawFigures(figureCollection);
 
             Console.ReadLine();

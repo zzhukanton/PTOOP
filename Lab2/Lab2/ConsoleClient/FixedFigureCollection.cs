@@ -7,18 +7,16 @@ using Services.Visitors;
 
 namespace ConsoleClient
 {
-    internal class StaticDrawableFigureCollection : IEnumerable<IDrawableFigure>
+    internal class FixedFigureCollection : IEnumerable<IDrawableFigure>
     {
         public IEnumerator<IDrawableFigure> GetEnumerator()
         {
-            var x = 0;
-            var y = 0;
-            yield return new Circle(ConsoleColor.Blue, x++, y++);
-            yield return new Dot(ConsoleColor.DarkGray, x++, y++);
-            yield return new Line(ConsoleColor.DarkMagenta, x++, y++);
-            yield return new Rectangle(ConsoleColor.Red, x++, y++);
-            yield return new Square(ConsoleColor.Yellow, x++, y++);
-            yield return new Triangle(ConsoleColor.Cyan, x, y);
+            yield return new Circle("White", 0, 10);
+            yield return new Polygon("Black", 10, 20);
+            yield return new Line("Red", 70, 90);
+            yield return new Rectangle("Green", 120, 120);
+            yield return new Square("Yellow", 130, 140);
+            yield return new Triangle("Azure", 200, 200);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -27,11 +25,11 @@ namespace ConsoleClient
         }
     }
 
-    internal class StaticExtendableFigureCollection : IEnumerable<IDrawableFigure>
+    internal class VisitedFigureCollection : IEnumerable<IDrawableFigure>
     {
         public IEnumerator<IDrawableFigure> GetEnumerator()
         {
-            var staticFigures = new StaticDrawableFigureCollection();
+            var staticFigures = new FixedFigureCollection();
             var visitor = new FigureVisitor();
 
             foreach (var staticFigure in staticFigures)

@@ -4,6 +4,6 @@ namespace WinFormClient.Drawers
 {
     internal class DotDrawer : BaseDrawer
     {
-        public override void Draw(Graphics graphics, Pen pen, int x, int y) => graphics.DrawEllipse(pen, x, y, 2, 2);
+        public override void Draw(Graphics g, Pen pen, int x, int y) => g.DrawEllipse(pen, x, y, 2, 2);
     }
 }
