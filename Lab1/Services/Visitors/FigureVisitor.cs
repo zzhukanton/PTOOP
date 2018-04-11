@@ -9,7 +9,7 @@ namespace Services.Visitors
         {
             if (figure == null) return;
 
-            figure.Color = ConsoleColor.DarkBlue;
+            figure.Color = "Blue";
             figure.X = 20;
             figure.Y = 20;
         }

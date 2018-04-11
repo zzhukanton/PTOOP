@@ -5,13 +5,9 @@ namespace Services
 {
     public class Triangle : BaseDrawableFigure
     {
-        public Triangle()
-        {
-        }
+        public Triangle() { }
 
-        public Triangle(ConsoleColor color, int coordinateX, int coordinateY) : base(color, coordinateX, coordinateY)
-        {
-        }
+        public Triangle(string color, int x, int y) : base(color, x, y) { }
 
         public override void Accept(IFigureVisitor visitor) => visitor?.Visit(this);
     }

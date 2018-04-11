@@ -11,13 +11,13 @@ namespace ConsoleClient
             IEnumerable<IDrawableFigure> figureCollection = new StaticDrawableFigureCollection();
             var figureDrawer = new Drawer();
 
-            Console.WriteLine("Drawing collection of figures...");
+            Console.WriteLine("Start drawing figure list:");
             Console.WriteLine();
 
             figureDrawer.DrawFigures(figureCollection);
 
             Console.WriteLine();
-            Console.WriteLine("Drawing extendable figures...");
+            Console.WriteLine("Drawing blue figures at 20, 20:");
             Console.WriteLine();
 
             figureCollection = new StaticExtendableFigureCollection();
