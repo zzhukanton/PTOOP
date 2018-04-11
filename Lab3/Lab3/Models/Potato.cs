@@ -7,6 +7,6 @@ namespace Models
     {
         public Potato(string name) : base(name) { }
 
-        public Potato() : base("Potato") { }
+        public Potato() : base("Shmotato") { }
     }
 }

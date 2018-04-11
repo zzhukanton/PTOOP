@@ -4,6 +4,6 @@ namespace Models
     {
         public Pepper(string name) : base(name) { }
 
-        public Pepper() : base("Pepper") { }
+        public Pepper() : base("Chili") { }
     }
 }

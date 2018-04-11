@@ -4,6 +4,6 @@ namespace Models
     {
         public Tomato(string name) : base(name) { }
 
-        public Tomato() : base("Tomato") { }
+        public Tomato() : base("Cherry") { }
     }
 }

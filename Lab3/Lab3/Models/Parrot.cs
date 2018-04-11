@@ -4,6 +4,6 @@ namespace Models
     {
         public Parrot(string name) : base(name) { }
 
-        public Parrot() : base("Parrot") { }
+        public Parrot() : base("Carrot") { }
     }
 }

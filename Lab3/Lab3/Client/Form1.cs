@@ -14,27 +14,18 @@ namespace Client
         private Salad _currentSalad;
         private List<Type> _vegetableTypes;
          
-        public Form1()
-        {
-            InitializeComponent();
-        }
+        public Form1() => InitializeComponent();
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            InitializeNewSalad();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            InitializeNewSalad();
-        }
-
+        private void button5_Click(object sender, EventArgs e) => InitializeNewSalad();
+        
+        private void Form1_Load(object sender, EventArgs e) => InitializeNewSalad();
+        
         private void InitializeNewSalad(List<Vegetable> deserializedSalad = null)
         {
             _currentSalad = new Salad(deserializedSalad);
             
-            lbxPeople.Items.Clear();
-            txbPersonName.Text = "";
+            lbxVegetables.Items.Clear();
+            txbVegetableName.Text = "";
 
             InitializeVegetableTypes();
         }
@@ -43,10 +34,10 @@ namespace Client
         {
             _vegetableTypes = LoadVegetableTypes();
 
-            ddlPersonType.Items.Clear();
+            ddlVegetableType.Items.Clear();
             foreach (var vegetableType in _vegetableTypes)
             {
-                ddlPersonType.Items.Add(new ComboboxItem {Text = vegetableType.Name, Value = vegetableType });
+                ddlVegetableType.Items.Add(new ComboboxItem {Text = vegetableType.Name, Value = vegetableType });
             }
         }
 
@@ -67,73 +58,55 @@ namespace Client
             return vegetableTypes;
         }
 
-        private void btnAddPerson_Click(object sender, EventArgs e)
+        private void btnAddVegetable_Click(object sender, EventArgs e)
         {
-            var selectedvegetableType = ddlPersonType.SelectedItem as ComboboxItem;
-
-            if (selectedvegetableType == null)
-            {
-                return;
-            }
+            var selectedvegetableType = ddlVegetableType.SelectedItem as ComboboxItem;
+            if (selectedvegetableType == null) return;
 
             var newVegetable = Activator.CreateInstance((Type)selectedvegetableType.Value) as Vegetable;
-
-            if (newVegetable == null)
-            {
-                 return;
-            }
+            if (newVegetable == null) return;
 
             _currentSalad.Ingridients.Add(newVegetable);
 
-            DrawCurrentSalad();
+            PrintCurrentSalad();
         }
 
-        private void DrawCurrentSalad()
+        private void PrintCurrentSalad()
         {
-            lbxPeople.Items.Clear();
+            lbxVegetables.Items.Clear();
 
             foreach (var vegetable in _currentSalad.Ingridients)
             {
-                lbxPeople.Items.Add(new ComboboxItem {Text = vegetable.FullName, Value = vegetable });
+                lbxVegetables.Items.Add(new ComboboxItem {Text = vegetable.FullName, Value = vegetable });
             }
         }
 
-        private void btnTiredTester_Click(object sender, EventArgs e)
+        private void btnRandomSalad_Click(object sender, EventArgs e)
         {
-            foreach (var item in ddlPersonType.Items)
+            foreach (var item in ddlVegetableType.Items)
             {
-                ddlPersonType.SelectedItem = item;
-                btnAddPerson.PerformClick();
+                ddlVegetableType.SelectedItem = item;
+                btnAddVegetable.PerformClick();
             }
         }
 
-        private void lbxPeople_SelectedIndexChanged(object sender, EventArgs e)
+        private void lbxVegetables_SelectedIndexChanged(object sender, EventArgs e)
         {
             var currentVegetable = (sender as ListBox)?.SelectedItem as ComboboxItem;
 
-            if (currentVegetable == null)
-            {
-                return;
-            }
+            if (currentVegetable == null) return;
 
-            txbPersonName.Text = (currentVegetable.Value as Vegetable)?.Name;
+            txbVegetableName.Text = (currentVegetable.Value as Vegetable)?.Name;
         }
 
-        private void btnEditPersonName_Click(object sender, EventArgs e)
+        private void btnEditVegetableName_Click(object sender, EventArgs e)
         {
-            var currentVegetable = lbxPeople.SelectedItem as ComboboxItem;
+            var currentVegetable = lbxVegetables.SelectedItem as ComboboxItem;
+            if (currentVegetable == null) return;
 
-            if (currentVegetable == null)
-            {
-                return;
-            }
+            var currentVegetableName = txbVegetableName.Text;
 
-            var currentVegetableName = txbPersonName.Text;
-
-            if (string.IsNullOrEmpty(currentVegetableName) || string.IsNullOrWhiteSpace(currentVegetableName))
-            {
-                return;
-            }
+            if (string.IsNullOrEmpty(currentVegetableName) || string.IsNullOrWhiteSpace(currentVegetableName)) return;
 
             var vegetable = currentVegetable.Value as Vegetable;
             if (vegetable != null)
@@ -141,30 +114,23 @@ namespace Client
                 vegetable.Name = currentVegetableName;
             }
 
-            DrawCurrentSalad();
+            PrintCurrentSalad();
         }
 
-        private void btnRemoveSelectedPerson_Click(object sender, EventArgs e)
+        private void btnRemoveSelectedVegetable_Click(object sender, EventArgs e)
         {
-            var currentVegetable = lbxPeople.SelectedItem as ComboboxItem;
-
-            if (currentVegetable == null)
-            {
-                return;
-            }
+            var currentVegetable = lbxVegetables.SelectedItem as ComboboxItem;
+            if (currentVegetable == null) return;
 
             var vegetable = currentVegetable.Value as Vegetable;
-            if (vegetable == null)
-            {
-                return;
-            }
+            if (vegetable == null) return;
 
             _currentSalad.Ingridients.Remove(vegetable);
 
-            DrawCurrentSalad();
+            PrintCurrentSalad();
         }
 
-        private void btnSaveKingdom_Click(object sender, EventArgs e)
+        private void btnSaveSalad_Click(object sender, EventArgs e)
         {
             DialogResult result = saveFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
@@ -175,13 +141,11 @@ namespace Client
                     var serializedSalad = XmlHelper.Serialize(_currentSalad?.Ingridients, _vegetableTypes.ToArray());
                     File.WriteAllText(filePath, serializedSalad, Encoding.UTF8);
                 }
-                catch (IOException)
-                {
-                }
+                catch (IOException) { }
             }
         }
 
-        private void btnLoadKingdom_Click(object sender, EventArgs e)
+        private void btnLoadSalad_Click(object sender, EventArgs e)
         {
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
@@ -197,7 +161,7 @@ namespace Client
                     InitializeNewSalad();
                 }
 
-                DrawCurrentSalad();
+                PrintCurrentSalad();
             }
         }
     }
