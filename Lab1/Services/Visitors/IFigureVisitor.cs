@@ -3,7 +3,7 @@
     public interface IFigureVisitor
     {
         void Visit(Circle figure);
-        void Visit(Dot figure);
+        void Visit(Polygon figure);
         void Visit(Line figure);
         void Visit(Rectangle figure);
         void Visit(Square figure);

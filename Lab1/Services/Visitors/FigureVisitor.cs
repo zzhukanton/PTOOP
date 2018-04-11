@@ -16,7 +16,7 @@ namespace Services.Visitors
 
         public void Visit(Circle figure) => DrawFigureOn20X20Y(figure);
 
-        public void Visit(Dot figure) => DrawFigureOn20X20Y(figure);
+        public void Visit(Polygon figure) => DrawFigureOn20X20Y(figure);
 
         public void Visit(Line figure) => DrawFigureOn20X20Y(figure);
 

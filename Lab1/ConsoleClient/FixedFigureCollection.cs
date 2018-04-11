@@ -12,7 +12,7 @@ namespace ConsoleClient
         public IEnumerator<IDrawableFigure> GetEnumerator()
         {
             yield return new Circle("White", 0, 10);
-            yield return new Dot("Black", 10, 20);
+            yield return new Polygon("Black", 10, 20);
             yield return new Line("Red", 70, 90);
             yield return new Rectangle("Green", 120, 120);
             yield return new Square("Yellow", 130, 140);
