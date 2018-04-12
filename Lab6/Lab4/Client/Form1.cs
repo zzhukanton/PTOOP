@@ -18,6 +18,7 @@ namespace Client
 
         public Form1()
         {
+            _aesEncryptionUtility = new AesEncryptionUtility();
             InitializeComponent();
         }
 
@@ -113,7 +114,7 @@ namespace Client
             return vegetableTypes;
         }
 
-        private void btnAddPerson_Click(object sender, EventArgs e)
+        private void btnAddVegetable_Click(object sender, EventArgs e)
         {
             var selectedPersonType = ddlVegetableType.SelectedItem as ComboboxItem;
 
@@ -144,7 +145,7 @@ namespace Client
             }
         }
 
-        private void btnTiredTester_Click(object sender, EventArgs e)
+        private void btnRandomSalad_Click(object sender, EventArgs e)
         {
             foreach (var item in ddlVegetableType.Items)
             {
@@ -153,7 +154,7 @@ namespace Client
             }
         }
 
-        private void lbxPeople_SelectedIndexChanged(object sender, EventArgs e)
+        private void lbxVegetables_SelectedIndexChanged(object sender, EventArgs e)
         {
             var currentPerson = (sender as ListBox)?.SelectedItem as ComboboxItem;
 
@@ -165,7 +166,7 @@ namespace Client
             txbVegetableName.Text = (currentPerson.Value as Vegetable)?.Name;
         }
 
-        private void btnEditPersonName_Click(object sender, EventArgs e)
+        private void btnEditVegetableName_Click(object sender, EventArgs e)
         {
             var currentPerson = lbxVegetables.SelectedItem as ComboboxItem;
 
@@ -190,7 +191,7 @@ namespace Client
             DrawCurrentSalad();
         }
 
-        private void btnRemoveSelectedPerson_Click(object sender, EventArgs e)
+        private void btnRemoveSelectedVegetable_Click(object sender, EventArgs e)
         {
             var currentVegetable = lbxVegetables.SelectedItem as ComboboxItem;
 
@@ -210,7 +211,7 @@ namespace Client
             DrawCurrentSalad();
         }
 
-        private void btnSaveKingdom_Click(object sender, EventArgs e)
+        private void btnSaveSalad_Click(object sender, EventArgs e)
         {
             DialogResult result = saveFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
@@ -226,13 +227,11 @@ namespace Client
 
                     File.WriteAllText(filePath, serializedSalad, Encoding.UTF8);
                 }
-                catch (IOException)
-                {
-                }
+                catch (IOException) { }
             }
         }
 
-        private void btnLoadKingdom_Click(object sender, EventArgs e)
+        private void btnLoadSalad_Click(object sender, EventArgs e)
         {
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
@@ -246,10 +245,10 @@ namespace Client
                     {
                         fileString = _aesEncryptionUtility.Decrypt(fileString);
                     }
-                    var deserializedSalad = XmlHelper.DeserializeFromFile<List<Vegetable>>(filePath, _vegetableTypes.ToArray());
+                    var deserializedSalad = XmlHelper.XmlDeserializeFromString<List<Vegetable>>(fileString, _vegetableTypes.ToArray());
                     InitializeNewSalad(deserializedSalad);
                 }
-                catch(Exception ex)
+                catch(Exception)
                 {
                     InitializeNewSalad();
                 }

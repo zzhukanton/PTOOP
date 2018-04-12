@@ -51,7 +51,7 @@
             this.lbxVegetables.Name = "lbxVegetables";
             this.lbxVegetables.Size = new System.Drawing.Size(128, 277);
             this.lbxVegetables.TabIndex = 0;
-            this.lbxVegetables.SelectedIndexChanged += new System.EventHandler(this.lbxPeople_SelectedIndexChanged);
+            this.lbxVegetables.SelectedIndexChanged += new System.EventHandler(this.lbxVegetables_SelectedIndexChanged);
             // 
             // btnLoadSalad
             // 
@@ -61,7 +61,7 @@
             this.btnLoadSalad.TabIndex = 1;
             this.btnLoadSalad.Text = "Load salad";
             this.btnLoadSalad.UseVisualStyleBackColor = true;
-            this.btnLoadSalad.Click += new System.EventHandler(this.btnLoadKingdom_Click);
+            this.btnLoadSalad.Click += new System.EventHandler(this.btnLoadSalad_Click);
             // 
             // btnSaveSalad
             // 
@@ -71,7 +71,7 @@
             this.btnSaveSalad.TabIndex = 2;
             this.btnSaveSalad.Text = "Save salad";
             this.btnSaveSalad.UseVisualStyleBackColor = true;
-            this.btnSaveSalad.Click += new System.EventHandler(this.btnSaveKingdom_Click);
+            this.btnSaveSalad.Click += new System.EventHandler(this.btnSaveSalad_Click);
             // 
             // ddlVegetableType
             // 
@@ -89,7 +89,7 @@
             this.btnAddVegetable.TabIndex = 4;
             this.btnAddVegetable.Text = "Add vegetable";
             this.btnAddVegetable.UseVisualStyleBackColor = true;
-            this.btnAddVegetable.Click += new System.EventHandler(this.btnAddPerson_Click);
+            this.btnAddVegetable.Click += new System.EventHandler(this.btnAddVegetable_Click);
             // 
             // btnRemoveSelectedVegetable
             // 
@@ -99,7 +99,7 @@
             this.btnRemoveSelectedVegetable.TabIndex = 5;
             this.btnRemoveSelectedVegetable.Text = "Remove selected";
             this.btnRemoveSelectedVegetable.UseVisualStyleBackColor = true;
-            this.btnRemoveSelectedVegetable.Click += new System.EventHandler(this.btnRemoveSelectedPerson_Click);
+            this.btnRemoveSelectedVegetable.Click += new System.EventHandler(this.btnRemoveSelectedVegetable_Click);
             // 
             // btnNewSalad
             // 
@@ -126,7 +126,7 @@
             this.btnEditVegetableName.TabIndex = 8;
             this.btnEditVegetableName.Text = "Edit title";
             this.btnEditVegetableName.UseVisualStyleBackColor = true;
-            this.btnEditVegetableName.Click += new System.EventHandler(this.btnEditPersonName_Click);
+            this.btnEditVegetableName.Click += new System.EventHandler(this.btnEditVegetableName_Click);
             // 
             // label1
             // 
@@ -146,7 +146,7 @@
             this.btnRandomSalad.TabIndex = 10;
             this.btnRandomSalad.Text = "RandomSalad";
             this.btnRandomSalad.UseVisualStyleBackColor = true;
-            this.btnRandomSalad.Click += new System.EventHandler(this.btnTiredTester_Click);
+            this.btnRandomSalad.Click += new System.EventHandler(this.btnRandomSalad_Click);
             // 
             // openFileDialog1
             // 
